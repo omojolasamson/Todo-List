@@ -1,14 +1,31 @@
 <ion-header>
-  <ion-navbar>
+  <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      To-do List
     </ion-title>
-  </ion-navbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-item>
+		<ion-input type="text" placeholder="Enter task" [(ngModel)]="taskName" #taskInput></ion-input>
+		<div class="item-note" item-end>
+			<button ion-button (click)="addTask()"><ion-icon name="add"></ion-icon></button>
+		</div>
+  </ion-item>
+  <div padding>
+		<ion-list>
+			<ion-item *ngFor="let todo of taskList; let i = index">
+        {{todo}}
+        <div class="item-note" item-end>
+          <button ion-button clear (click)="updateTask(i)">
+            <ion-icon name="create"></ion-icon>
+          </button>
+          <button ion-button clear (click)="deleteTask(i)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </div>
+      </ion-item>
+		</ion-list>
+	</div>
 </ion-content>
