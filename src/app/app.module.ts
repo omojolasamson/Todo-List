@@ -6,10 +6,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
+import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 var firebaseConfig = {
   apiKey: "AIzaSyCaeMkMEJgkNPF192TAaXg0QRNpSXFkcok",
@@ -26,7 +29,10 @@ var firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    LoginPage, 
+    RegisterPage, 
+    ResetPasswordPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,10 @@ var firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    LoginPage, 
+    RegisterPage, 
+    ResetPasswordPage
   ],
   providers: [
     StatusBar,

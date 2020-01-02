@@ -3,6 +3,9 @@
     <ion-title>
       To-do List
     </ion-title>
+    <ion-buttons end>
+			<button ion-button (click)="logout()">Logout</button>
+		</ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -15,7 +18,7 @@
   </ion-item>
   <div padding>
 		<ion-list>
-			<ion-item *ngFor="let todo of taskList; let i = index">
+      <ion-item *ngFor="let todo of fireStoreTaskList | async"></ion-item>
         {{todo}}
         <div class="item-note" item-end>
           <button ion-button clear (click)="updateTask(i)">
